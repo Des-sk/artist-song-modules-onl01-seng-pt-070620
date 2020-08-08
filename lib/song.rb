@@ -5,7 +5,7 @@ require_relative '../lib/concerns/paramable'
 class Song
   
   extend Memorable::ClassMethod
-  
+  include Paramable::InstanceMethod
   
   attr_accessor :name
   attr_reader :artist
