@@ -1,11 +1,19 @@
 require 'pry'
+require_relative'../lib/concerns/memorable'
+require_relative'../lib/concerns/paramable'
 
 class Song
+  
+  extend Memorable::ClassMethod
+  include Paramable::InstanceMethod
+ 
+  
   attr_accessor :name
   attr_reader :artist
 
   @@songs = []
-
+  
+  
   def initialize
     @@songs << self
   end
@@ -18,19 +26,9 @@ class Song
     @@songs
   end
 
-  def self.reset_all
-    self.all.clear
-  end
-
-  def self.count
-    self.all.count
-  end
-
   def artist=(artist)
     @artist = artist
   end
 
-  def to_param
-    name.downcase.gsub(' ', '-')
-  end
+ 
 end
