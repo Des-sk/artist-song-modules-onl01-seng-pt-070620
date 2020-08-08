@@ -1,5 +1,6 @@
 require 'pry'
 
+
 class Song
   
   extend Memorable::ClassMethod
