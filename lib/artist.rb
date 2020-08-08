@@ -1,5 +1,5 @@
 require 'pry'
-require_relative
+require_relative'../lib/concerns/memorable'
 
 class Artist
   extend Memorable::ClassMethod
